@@ -2,20 +2,24 @@ import React, {useEffect} from 'react';
 
 import {Text} from 'react-native';
 import {Spinner} from 'native-base';
-import Geolocation from '@react-native-community/geolocation';
-import {getUniqueId} from 'react-native-device-info';
 import {connect} from 'react-redux';
-
+import {bindActionCreators} from 'redux';
+import * as DriverActions from '~/store/modules/driver/actions';
 // import { Container } from './styles';
 
-function Driver(props) {
-  console.tron.log(props)
-  const socket = props.navigation.getParam('socket', '');
-  return (
-    <>
-      { props.isSearching ? <Spinner /> : <Text>Driver</Text> }
-    </>
-  )
+function Driver({navigation, isSearching, updateDriverData}) {
+  useEffect(() => {
+    const socket = navigation.getParam('socket', '');
+    updateDriverData(socket);
+  }, [navigation, updateDriverData]);
+
+  return <>{isSearching ? <Spinner /> : <Text>Driver</Text>}</>;
 }
-const mapStateToProps = state => state
-export default connect(mapStateToProps)(Driver);
+const mapStateToProps = state => state;
+const mapDispatchToProps = dispatch =>
+  bindActionCreators(DriverActions, dispatch);
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps,
+)(Driver);

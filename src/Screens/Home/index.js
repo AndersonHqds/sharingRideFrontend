@@ -29,7 +29,7 @@ const Home = ({navigation}) => {
     },
   };
   const [isConnected, setConnection] = useState(false);
-  const socket = socketIO('http://192.168.0.102:5000');
+  const socket = socketIO('http://10.0.32.113:5000');
 
   useCallback(() => {
     socket.connect();

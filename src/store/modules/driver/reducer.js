@@ -17,8 +17,9 @@ const INITIAL_STATE = {
 };
 
 export default function driver(state = INITIAL_STATE, action) {
-  switch (action.types) {
-    case '@driver/UPDATE_DRIVER_DATA':
+  switch (action.type) {
+    case '@driver/UPDATE_DRIVER_DATA_SUCCESS':
+      console.tron.log(action);
       return {state, ...action};
     default:
       return state;

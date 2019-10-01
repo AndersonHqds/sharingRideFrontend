@@ -1,7 +1,7 @@
-export function updateDriverData(data) {
+export function updateDriverData(socket) {
   return {
     type: '@driver/UPDATE_DRIVER_DATA',
-    data,
+    socket,
   };
 }
 
