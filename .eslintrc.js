@@ -9,5 +9,12 @@ module.exports = {
     "no-confusing-arrow": ["error", {"allowParens": false}],
     "quotes": ["error", "single", { "allowTemplateLiterals": true }],
     "template-curly-spacing": "off"
+  },
+  settings: {
+    "import/resolver": {
+      "babel-plugin-root-import": {
+        rootPathSuffix: "src"
+      }
+    }
   }
 };
