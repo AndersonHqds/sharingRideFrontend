@@ -1,5 +1,5 @@
 import React, {useState, useCallback} from 'react';
-import {Text, StatusBar} from 'react-native';
+import {Text} from 'react-native';
 import socketIO from 'socket.io-client';
 import {Button, CardItem} from 'native-base';
 import LottieView from 'lottie-react-native';
@@ -29,7 +29,7 @@ const Home = ({navigation}) => {
     },
   };
   const [isConnected, setConnection] = useState(false);
-  const socket = socketIO('http://192.168.0.107:5000');
+  const socket = socketIO('http://192.168.0.102:5000');
 
   useCallback(() => {
     socket.connect();
@@ -40,7 +40,6 @@ const Home = ({navigation}) => {
 
   return (
     <ContainerView>
-      <StatusBar backgroundColor="#3b67dc" />
       <WelcomeMenu>
         <WelcomeContainer>
           <Button

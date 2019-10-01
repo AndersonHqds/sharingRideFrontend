@@ -1,42 +1,16 @@
-import {createAppContainer} from 'react-navigation';
-import {createStackNavigator} from 'react-navigation-stack';
+import React from 'react';
+import { StatusBar } from 'react-native';
+import {Provider} from 'react-redux';
+import './config/ReactotronConfig';
 
-import Home from './Screens/Home';
-import Client from './Screens/Client';
-import Driver from './Screens/Driver';
+import store from './store';
+import Routes from './routes';
 
-const Routes = createAppContainer(
-  createStackNavigator(
-    {
-      Home: {
-        screen: Home,
-        navigationOptions: {
-          title: 'Home',
-        },
-      },
-      Client: {
-        screen: Client,
-        navigationOptions: {
-          title: 'Client',
-        },
-      },
-      Driver: {
-        screen: Driver,
-        navigationOptions: {
-          title: 'Driver',
-        },
-      },
-    },
-    {
-      headerLayoutPreset: 'center',
-      defaultNavigationOptions: {
-        headerStyle: {
-          backgroundColor: '#3b67dc',
-        },
-        headerTintColor: '#FFF',
-      },
-    },
-  ),
-);
-
-export default Routes;
+export default function App() {
+  return (
+    <Provider store={store}>
+      <StatusBar backgroundColor="#3b67dc" />
+      <Routes />
+    </Provider>
+  )
+}

@@ -11,7 +11,9 @@
     "postinstall": "npx jetify"
   },
   "dependencies": {
+    "@react-native-community/async-storage": "^1.6.2",
     "@react-native-community/geolocation": "^2.0.2",
+    "immer": "^4.0.0",
     "lottie-react-native": "^3.1.1",
     "native-base": "^2.13.8",
     "react": "16.9.0",
@@ -22,6 +24,12 @@
     "react-native-maps": "^0.25.0",
     "react-navigation": "^4.0.10",
     "react-navigation-stack": "^1.9.0",
+    "react-redux": "^7.1.1",
+    "reactotron-react-native": "^4.0.2",
+    "reactotron-redux": "^3.1.2",
+    "reactotron-redux-saga": "^4.2.2",
+    "redux": "^4.0.4",
+    "redux-saga": "^1.1.1",
     "socket.io-client": "2.1.1",
     "styled-components": "^4.4.0"
   },
@@ -30,7 +38,9 @@
     "@babel/runtime": "^7.6.2",
     "@react-native-community/eslint-config": "^0.0.5",
     "babel-jest": "^24.9.0",
+    "babel-plugin-root-import": "^6.4.1",
     "eslint": "^6.4.0",
+    "eslint-import-resolver-babel-plugin-root-import": "^1.1.1",
     "jest": "^24.9.0",
     "metro-react-native-babel-preset": "^0.56.0",
     "react-test-renderer": "16.9.0"
