@@ -9,7 +9,16 @@ export default function FormDriver() {
           <Input placeholder="Name:" />
         </Item>
         <Item>
-          <Input placeholder="Name:" />
+          <Input placeholder="Car Name:" />
+        </Item>
+        <Item>
+          <Input placeholder="Car Board:" />
+        </Item>
+        <Item>
+          <Input placeholder="From Location:" />
+        </Item>
+        <Item>
+          <Input placeholder="To Location:" />
         </Item>
       </Form>
     </Content>
